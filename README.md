@@ -66,13 +66,12 @@ Para editar o conteúdo diretamente pelo painel em produção sem precisar fazer
 
 1. Crie uma conta em [keystatic.cloud](https://keystatic.cloud)
 2. Crie um novo projeto e conecte ao seu repositório GitHub
-3. Copie o **Project slug** (ex: `minha-equipe/olic-kids`)
+3. Anote o **Project slug** (ex: `olickids/olickids`)
 4. No painel da Netlify → **Site configuration → Environment variables**, adicione:
 
 | Variável | Valor |
 |---|---|
-| `KEYSTATIC_STORAGE` | `cloud` |
-| `KEYSTATIC_CLOUD_PROJECT` | `minha-equipe/olic-kids` |
+| `VITE_KEYSTATIC_CLOUD_PROJECT` | `olickids/olickids` |
 
 5. Faça um novo deploy.
 
