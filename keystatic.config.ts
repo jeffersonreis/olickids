@@ -4,7 +4,7 @@ const isCloud = !import.meta.env.DEV;
 
 export default config({
   storage: isCloud ? { kind: 'cloud' } : { kind: 'local' },
-  ...(isCloud ? { cloud: { project: import.meta.env.VITE_KEYSTATIC_CLOUD_PROJECT ?? 'your-team/olic-kids' } } : {}),
+  ...(isCloud ? { cloud: { project: import.meta.env.VITE_KEYSTATIC_CLOUD_PROJECT ?? 'olickids/olickids' } } : {}),
 
   ui: {
     brand: { name: 'Olic Kids CMS' },
