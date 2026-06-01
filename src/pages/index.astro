@@ -1,0 +1,58 @@
+---
+export const prerender = true;
+
+import { createReader } from '@keystatic/core/reader';
+import keystaticConfig from '../../keystatic.config';
+import Layout from '../layouts/Layout.astro';
+
+import { Header } from '../components/sections/Header';
+import Hero from '../components/sections/Hero.astro';
+import Features from '../components/sections/Features.astro';
+import { Product } from '../components/sections/Product';
+import HowToBuy from '../components/sections/HowToBuy.astro';
+import Story from '../components/sections/Story.astro';
+import FinalCTA from '../components/sections/FinalCTA.astro';
+import Footer from '../components/sections/Footer.astro';
+
+const reader = createReader(process.cwd(), keystaticConfig);
+
+const [siteConfig, product, howToBuy, hero, features, story, finalCta, footerData, nav] = await Promise.all([
+  reader.singletons.config.read(),
+  reader.singletons.product.read(),
+  reader.singletons.howToBuy.read(),
+  reader.singletons.hero.read(),
+  reader.singletons.features.read(),
+  reader.singletons.story.read(),
+  reader.singletons.finalCta.read(),
+  reader.singletons.footer.read(),
+  reader.collections.nav.all(),
+]);
+
+if (!siteConfig || !product || !howToBuy || !hero || !features || !story || !finalCta || !footerData) {
+  throw new Error('Missing required content — check that seed YAML files are present.');
+}
+---
+
+<Layout>
+  <Header client:load nav={nav} config={siteConfig} />
+
+  <main>
+    <Hero hero={hero} config={{ whatsappNumber: siteConfig.whatsappNumber }} />
+
+    <Features features={features} />
+
+    <Product
+      client:load
+      product={product}
+      whatsappNumber={siteConfig.whatsappNumber}
+    />
+
+    <HowToBuy howToBuy={howToBuy} whatsappNumber={siteConfig.whatsappNumber} />
+
+    <Story story={story} />
+
+    <FinalCTA finalCta={finalCta} />
+  </main>
+
+  <Footer nav={nav} config={siteConfig} footer={footerData} />
+</Layout>

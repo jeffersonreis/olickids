@@ -1,0 +1,24 @@
+eyebrow: Simples assim
+heading: Como comprar
+subtitle: >-
+  Sem carrinho complicado. O pedido acontece numa conversa, do nosso jeito
+  carinhoso.
+steps:
+  - 'n': '01'
+    title: Escolha a cor e o tamanho
+    text: Defina a cor favorita e o tamanho na grade de 01 a 14.
+  - 'n': '02'
+    title: Chame no WhatsApp
+    text: Toque em comprar e a conversa abre com tudo preenchido.
+  - 'n': '03'
+    title: Combine entrega e pagamento
+    text: Acertamos a entrega e a forma de pagamento com você.
+payments:
+  - Pix
+  - Dinheiro
+  - Cartão de débito
+  - Cartão de crédito
+deliveryNote: Entregas com valor a combinar.
+deliveryRegion: Blumenau e região · Brasil em breve
+ctaButton: Fazer meu pedido no WhatsApp
+ctaButtonHref: "https://wa.me/554792657717?text=Ol%C3%A1!%20Tenho%20interesse%20no%20Conjunto%20T%C3%A9rmico%20da%20Olic%20Kids%20%F0%9F%90%BE"

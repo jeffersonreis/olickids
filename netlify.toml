@@ -1,0 +1,10 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# Required for Keystatic Cloud storage mode
+# Set KEYSTATIC_STORAGE=cloud and KEYSTATIC_CLOUD_PROJECT=team/olic-kids
+# in the Netlify dashboard environment variables.

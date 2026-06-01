@@ -1,0 +1,71 @@
+---
+interface FeatureItem {
+  icon: string;
+  title: string;
+  text: string;
+}
+
+interface Props {
+  features: {
+    eyebrow: string;
+    heading: string;
+    items: FeatureItem[];
+  };
+}
+
+const { features } = Astro.props;
+---
+
+<section style="padding: clamp(60px, 9vw, 96px) 0; background: var(--cream);">
+  <div class="wrap">
+    <div class="reveal" style="text-align: center; display: grid; justify-items: center; margin-bottom: 48px;">
+      <div style="display: inline-flex; align-items: center; gap: 10px; justify-content: center;">
+        <img src="/images/dog_taupe.png" alt="" style="width: 26px; opacity: 0.9;" />
+        <span style="font-size: 12.5px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--taupe);">{features.eyebrow}</span>
+      </div>
+      <h2 style="font-size: clamp(1.8rem, 4vw, 2.8rem); margin-top: 14px; max-width: 620px;">{features.heading}</h2>
+    </div>
+
+    <div class="feat-grid" style="display: grid; gap: 20px;">
+      {features.items.map(({ icon, title, text }, i) => (
+        <div
+          class="reveal"
+          style={`background: var(--soft-white); border: 1px solid var(--line); border-radius: var(--radius); padding: 30px 26px; display: grid; gap: 14px; text-align: left; transition-delay: ${i * 90}ms;`}
+        >
+          <div style="width: 54px; height: 54px; border-radius: 999px; display: grid; place-items: center; background: var(--cream); border: 1.5px solid var(--taupe);">
+            {icon === 'thermo' && (
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--brown)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 14.76V5a2 2 0 0 0-4 0v9.76a4 4 0 1 0 4 0Z"/>
+                <path d="M12 9v6"/>
+              </svg>
+            )}
+            {icon === 'feather' && (
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--brown)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"/>
+                <path d="M16 8 2 22"/>
+                <path d="M17.5 15H9"/>
+              </svg>
+            )}
+            {icon === 'shield' && (
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--brown)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/>
+                <path d="m9 12 2 2 4-4"/>
+              </svg>
+            )}
+            {icon === 'wash' && (
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--brown)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="5" y="3" width="14" height="18" rx="2"/>
+                <path d="M5 7h14"/>
+                <circle cx="12" cy="14" r="4"/>
+                <path d="M9.5 14a2.5 2.5 0 0 1 5 0"/>
+                <circle cx="8" cy="5" r=".4" fill="var(--brown)"/>
+              </svg>
+            )}
+          </div>
+          <h3 style="font-size: 1.28rem;">{title}</h3>
+          <p style="color: var(--text); font-size: 0.98rem;">{text}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

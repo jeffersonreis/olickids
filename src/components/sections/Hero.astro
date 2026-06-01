@@ -1,0 +1,114 @@
+---
+interface Props {
+  hero: {
+    eyebrow: string;
+    titlePrefix: string;
+    titleSuffix: string;
+    subtitle: string;
+    trustItems: string[];
+    button1Label: string;
+    button1Href: string;
+    button2Label: string;
+    button2Href: string;
+    image: string | null;
+  };
+  config: {
+    whatsappNumber: string;
+  };
+}
+
+const { hero, config } = Astro.props;
+const waDefault = `https://wa.me/${config.whatsappNumber}?text=${encodeURIComponent('Olá! Tenho interesse no Conjunto Térmico da Olic Kids 🐾')}`;
+const btn1Href = hero.button1Href || '#produto';
+const btn2Href = hero.button2Href || waDefault;
+const heroImageSrc = hero.image ? `/images/hero/${hero.image}` : null;
+---
+
+<section id="inicio" style="padding-top: 120px; background: var(--cream);">
+  <div class="wrap" style="text-align: center; padding-bottom: 44px;">
+    <div class="reveal" style="display: grid; justify-items: center;">
+
+      <!-- eyebrow -->
+      <div style="display: inline-flex; align-items: center; gap: 10px; justify-content: center;">
+        <img src="/images/dog_taupe.png" alt="" style="width: 26px; opacity: 0.9;" />
+        <span style="font-size: 12.5px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--taupe);">
+          {hero.eyebrow}
+        </span>
+      </div>
+
+      <!-- title -->
+      <h1 style="font-size: clamp(2.8rem, 8vw, 6rem); margin-top: 18px; font-weight: 500;">
+        {hero.titlePrefix}<br />
+        com&nbsp;<em style="font-style: italic; color: var(--taupe);">{hero.titleSuffix}</em>
+      </h1>
+
+      <p style="font-size: clamp(1.05rem, 2.4vw, 1.3rem); max-width: 560px; margin-top: 22px; color: var(--text);">
+        {hero.subtitle}
+      </p>
+
+      <div style="display: flex; flex-wrap: wrap; gap: 14px; margin-top: 30px; justify-content: center;">
+        <a
+          href={btn1Href}
+          class="olic-btn olic-btn-primary"
+          style="display:inline-flex;align-items:center;gap:10px;padding:17px 30px;font-size:17px;font-weight:700;border-radius:var(--btn-radius);background:var(--accent);color:var(--accent-ink);border:1.5px solid transparent;text-decoration:none;line-height:1.1;white-space:nowrap;"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+          </svg>
+          {hero.button1Label}
+        </a>
+        <a
+          href={btn2Href}
+          target={btn2Href.startsWith('http') ? '_blank' : undefined}
+          rel={btn2Href.startsWith('http') ? 'noopener' : undefined}
+          class="olic-btn olic-btn-outline"
+          style="display:inline-flex;align-items:center;gap:10px;padding:17px 30px;font-size:17px;font-weight:700;border-radius:var(--btn-radius);background:transparent;color:var(--brown);border:1.5px solid var(--taupe);text-decoration:none;line-height:1.1;white-space:nowrap;"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--brown)">
+            <path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 0 1 8.413 3.488 11.82 11.82 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.978-.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/>
+          </svg>
+          {hero.button2Label}
+        </a>
+      </div>
+
+      <!-- Trust pills -->
+      {hero.trustItems.length > 0 && (
+        <div style="display: flex; gap: 22px; margin-top: 30px; flex-wrap: wrap; justify-content: center; color: var(--text); font-size: 14px;">
+          {hero.trustItems.map((item: string) => (
+            <span style="display: inline-flex; align-items: center; gap: 7px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--taupe)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 6 9 17l-5-5"/>
+              </svg>
+              {item}
+            </span>
+          ))}
+        </div>
+      )}
+
+    </div>
+  </div>
+
+  <!-- Hero image (from CMS) or placeholder -->
+  <div class="reveal wrap" style="padding-bottom: 64px; transition-delay: 120ms;">
+    {heroImageSrc ? (
+      <img
+        src={heroImageSrc}
+        alt="Olic Kids — foto lifestyle"
+        style="width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: var(--radius); border: 1px solid var(--line); display: block;"
+      />
+    ) : (
+      <div style="position: relative; width: 100%; aspect-ratio: 16/9; border-radius: var(--radius); overflow: hidden; background: var(--cream); border: 1px solid var(--line); display: grid; place-items: center;">
+        <div style="position: absolute; inset: 0; opacity: 0.5; background-image: repeating-linear-gradient(135deg, transparent 0 14px, rgba(176,154,128,0.07) 14px 15px);"></div>
+        <img src="/images/dog_taupe.png" alt="" style="position: absolute; bottom: 18px; right: 18px; width: 120px; opacity: 0.16;" />
+        <div style="position: relative; text-align: center; padding: 0 18px; display: grid; gap: 10px; justify-items: center;">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--taupe)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.8">
+            <rect x="3" y="4" width="18" height="16" rx="2.5"/><circle cx="8.5" cy="9.5" r="1.6"/><path d="M21 16l-5-5L7 20"/>
+          </svg>
+          <span style="font-family: ui-monospace, 'SFMono-Regular', Menlo, monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--taupe); line-height: 1.5; max-width: 200px;">
+            Foto lifestyle — criança no conjunto térmico, luz natural
+          </span>
+        </div>
+      </div>
+    )}
+  </div>
+</section>
