@@ -23,10 +23,10 @@ colors:
     hex: '#7FD8C7'
     ring: '#7FD8C7'
     gallery:
-      - label: Menina · look completo, vista frente
-      - label: Menino · look completo, vista frente
-      - label: Detalhe · punho e bordado dachshund
-      - label: Vista costas · caimento do conjunto
+      - label: Imagem dupla
+        image: /images/gallery/colors/1/gallery/0/image.webp
+      - label: Imagem conjunto
+        image: /images/gallery/colors/1/gallery/1/image.webp
   - name: Rosa
     hex: '#F6CAD8'
     ring: '#F6CAD8'
