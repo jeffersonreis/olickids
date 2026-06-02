@@ -5,9 +5,9 @@ price: R$ 69,90
 tag: Lançamento
 defaultGallery:
   - label: Imagem 1
-    image: /images/gallery/defaultGallery/0/image.jpg
+    image: /images/gallery/defaultGallery/0/image.webp
   - label: Imagem 2
-    image: /images/gallery/defaultGallery/1/image.jpg
+    image: /images/gallery/defaultGallery/1/image.webp
 colors:
   - name: Azul Marinho
     hex: '#1F2A4D'
@@ -16,8 +16,7 @@ colors:
       - label: Menina · look completo, vista frente
         image: /images/gallery/colors/0/gallery/0/image.webp
       - label: Menino · look completo, vista frente
-      - label: Detalhe · punho e bordado dachshund
-      - label: Vista costas · caimento do conjunto
+        image: /images/gallery/colors/0/gallery/1/image.webp
   - name: Menta
     hex: '#7FD8C7'
     ring: '#7FD8C7'
