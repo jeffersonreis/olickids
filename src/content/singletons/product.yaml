@@ -17,6 +17,8 @@ colors:
         image: /images/gallery/colors/0/gallery/0/image.webp
       - label: Menino · look completo, vista frente
         image: /images/gallery/colors/0/gallery/1/image.webp
+      - label: Imagem 3
+        image: /images/gallery/colors/0/gallery/2/image.webp
   - name: Menta
     hex: '#7FD8C7'
     ring: '#7FD8C7'
