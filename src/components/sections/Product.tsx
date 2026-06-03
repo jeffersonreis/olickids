@@ -77,15 +77,24 @@ export function Product({ product, whatsappNumber }: ProductProps) {
     if (!sectionEl || !ctaEl) return;
 
     let sectionVisible = false;
-    let ctaVisible = false;
-    const update = () => setShowFloat(sectionVisible && !ctaVisible);
+    let ctaBelow = true; // true = CTA ainda não foi atingido
+    const update = () => setShowFloat(sectionVisible && ctaBelow);
 
     const sectionObs = new IntersectionObserver(
       ([e]) => { sectionVisible = e.isIntersecting; update(); },
       { threshold: 0 }
     );
     const ctaObs = new IntersectionObserver(
-      ([e]) => { ctaVisible = e.isIntersecting; update(); },
+      ([e]) => {
+        if (e.isIntersecting) {
+          ctaBelow = false; // CTA ficou visível: não mostrar mais
+        } else {
+          // Se saiu pelo topo (top < 0), o usuário já passou — manter oculto
+          // Se saiu pelo fundo (top > 0), ainda não chegou — mostrar
+          ctaBelow = e.boundingClientRect.top > 0;
+        }
+        update();
+      },
       { threshold: 0 }
     );
 

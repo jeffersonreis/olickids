@@ -17,6 +17,12 @@ interface Props {
 const { howToBuy, whatsappNumber } = Astro.props;
 const waDefault = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent('Olá! Tenho interesse no Conjunto Térmico da Olic Kids')}`;
 const ctaHref = howToBuy.ctaButtonHref || waDefault;
+
+function em(text: string): string {
+  return text
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\*(.+?)\*/g, '<em>$1</em>');
+}
 ---
 
 <section style="padding: clamp(64px, 10vw, 120px) 0; background: var(--soft-white);">
@@ -30,7 +36,7 @@ const ctaHref = howToBuy.ctaButtonHref || waDefault;
       </div>
       <h2 style="font-size: clamp(1.9rem, 4.2vw, 2.9rem); margin-top: 14px;">{howToBuy.heading}</h2>
       {howToBuy.subtitle && (
-        <p style="color: var(--text); margin-top: 14px; max-width: 500px; font-size: 1.05rem;">{howToBuy.subtitle}</p>
+        <p style="color: var(--text); margin-top: 14px; max-width: 500px; font-size: 1.05rem;" set:html={em(howToBuy.subtitle)} />
       )}
     </div>
 
@@ -39,8 +45,8 @@ const ctaHref = howToBuy.ctaButtonHref || waDefault;
       {howToBuy.steps.map(({ n, title, text }, i) => (
         <div class="reveal" style={`position: relative; padding: 8px 4px; transition-delay: ${i * 100}ms;`}>
           <div style="font-family: var(--serif); font-size: 3.4rem; color: var(--cream-deep); line-height: 1;">{n}</div>
-          <h3 style="font-size: 1.32rem; margin-top: 8px;">{title}</h3>
-          <p style="color: var(--text); margin-top: 8px; max-width: 300px;">{text}</p>
+          <h3 style="font-size: 1.32rem; margin-top: 8px;" set:html={em(title)} />
+          <p style="color: var(--text); margin-top: 8px; max-width: 300px;" set:html={em(text)} />
         </div>
       ))}
     </div>
@@ -67,8 +73,8 @@ const ctaHref = howToBuy.ctaButtonHref || waDefault;
             <circle cx="12" cy="10" r="3"/>
           </svg>
           <div style="font-size: 15px;">
-            <b style="color: var(--brown);">{howToBuy.deliveryNote}</b><br />
-            {howToBuy.deliveryRegion}
+            <b style="color: var(--brown);" set:html={em(howToBuy.deliveryNote)} /><br />
+            <span set:html={em(howToBuy.deliveryRegion)} />
           </div>
         </div>
       </div>
