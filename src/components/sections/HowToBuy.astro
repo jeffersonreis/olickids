@@ -15,7 +15,7 @@ interface Props {
 }
 
 const { howToBuy, whatsappNumber } = Astro.props;
-const waDefault = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent('Olá! Tenho interesse no Conjunto Térmico da Olic Kids 🐾')}`;
+const waDefault = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent('Olá! Tenho interesse no Conjunto Térmico da Olic Kids')}`;
 const ctaHref = howToBuy.ctaButtonHref || waDefault;
 ---
 

@@ -18,7 +18,7 @@ interface Props {
 }
 
 const { hero, config } = Astro.props;
-const waDefault = `https://wa.me/${config.whatsappNumber}?text=${encodeURIComponent('Olá! Tenho interesse no Conjunto Térmico da Olic Kids 🐾')}`;
+const waDefault = `https://wa.me/${config.whatsappNumber}?text=${encodeURIComponent('Olá! Tenho interesse no Conjunto Térmico da Olic Kids')}`;
 const btn1Href = hero.button1Href || '#produto';
 const btn2Href = hero.button2Href || waDefault;
 const heroImageSrc = hero.image ? `/images/hero/${hero.image}` : null;

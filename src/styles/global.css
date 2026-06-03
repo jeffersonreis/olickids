@@ -745,3 +745,16 @@
 
 /* ── product colors section ───────────────── */
 .pay-card  { padding: 30px; }
+
+/* ── reduz espaço das seções ─────────────── */
+#inicio { padding-top: 84px !important; }
+main section:not(#inicio) {
+  padding-top: 72px !important;
+  padding-bottom: 72px !important;
+}
+@media (max-width: 767px) {
+  main section:not(#inicio) {
+    padding-top: 48px !important;
+    padding-bottom: 48px !important;
+  }
+}

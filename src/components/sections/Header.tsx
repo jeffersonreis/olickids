@@ -23,7 +23,7 @@ interface HeaderProps {
 }
 
 function waLink(number: string, msg?: string) {
-  const txt = encodeURIComponent(msg ?? 'Olá! Tenho interesse no Conjunto Térmico da Olic Kids 🐾');
+  const txt = encodeURIComponent(msg ?? 'Olá! Tenho interesse no Conjunto Térmico da Olic Kids');
   return `https://wa.me/${number}?text=${txt}`;
 }
 
