@@ -4,8 +4,8 @@ subtitle: Conforto e proteção para os dias frios
 price: R$ 69,90
 tag: Lançamento
 defaultGallery:
-  - label: Imagem 1
-    image: /images/gallery/defaultGallery/0/image.webp
+  - label: Meninos com conjunto térmico
+    image: /images/gallery/defaultGallery/0/image.jpeg
   - label: Imagem 2
     image: /images/gallery/defaultGallery/1/image.webp
 colors:
@@ -13,12 +13,8 @@ colors:
     hex: '#1F2A4D'
     ring: '#1F2A4D'
     gallery:
-      - label: Menina · look completo, vista frente
-        image: /images/gallery/colors/0/gallery/0/image.webp
       - label: Menino · look completo, vista frente
-        image: /images/gallery/colors/0/gallery/1/image.webp
-      - label: Imagem 3
-        image: /images/gallery/colors/0/gallery/2/image.webp
+        image: /images/gallery/colors/0/gallery/0/image.jpeg
   - name: Menta
     hex: '#7FD8C7'
     ring: '#7FD8C7'
