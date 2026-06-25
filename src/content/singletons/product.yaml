@@ -15,38 +15,23 @@ colors:
     gallery:
       - label: Menino · look completo, vista frente
         image: /images/gallery/colors/0/gallery/0/image.jpeg
-  - name: Menta
-    hex: '#7FD8C7'
-    ring: '#7FD8C7'
-    gallery:
-      - label: Imagem dupla
-        image: /images/gallery/colors/1/gallery/0/image.webp
-      - label: Imagem conjunto
-        image: /images/gallery/colors/1/gallery/1/image.webp
   - name: Rosa
     hex: '#F6CAD8'
     ring: '#F6CAD8'
     gallery:
       - label: Menina · look completo, vista frente
-      - label: Menino · look completo, vista frente
-      - label: Detalhe · punho e bordado dachshund
-      - label: Vista costas · caimento do conjunto
-  - name: Grafite
+        image: /images/gallery/colors/1/gallery/0/image.jpeg
+  - name: Preto
     hex: '#333333'
     ring: '#333333'
     gallery:
       - label: Menina · look completo, vista frente
-      - label: Menino · look completo, vista frente
-      - label: Detalhe · punho e bordado dachshund
-      - label: Vista costas · caimento do conjunto
   - name: Branco
     hex: '#FFFFFF'
     ring: '#E6DDCE'
     gallery:
       - label: Menina · look completo, vista frente
-      - label: Menino · look completo, vista frente
-      - label: Detalhe · punho e bordado dachshund
-      - label: Vista costas · caimento do conjunto
+        image: /images/gallery/colors/3/gallery/0/image.jpeg
 sizes:
   - '01'
   - '02'
