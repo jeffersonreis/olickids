@@ -26,6 +26,8 @@ colors:
     ring: '#000000'
     gallery:
       - label: Menina · look completo, vista frente
+      - label: Conjunto preto, vista frontal, menino
+        image: /images/gallery/colors/2/gallery/1/image.jpeg
   - name: Branco
     hex: '#FFFFFF'
     ring: '#E6DDCE'
