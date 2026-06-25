@@ -22,16 +22,18 @@ colors:
       - label: Menina · look completo, vista frente
         image: /images/gallery/colors/1/gallery/0/image.jpeg
   - name: Preto
-    hex: '#333333'
-    ring: '#333333'
+    hex: '#000000'
+    ring: '#000000'
     gallery:
       - label: Menina · look completo, vista frente
   - name: Branco
     hex: '#FFFFFF'
     ring: '#E6DDCE'
     gallery:
-      - label: Menina · look completo, vista frente
+      - label: Menino · look completo, vista frente
         image: /images/gallery/colors/3/gallery/0/image.jpeg
+      - label: Menino com pose, vista frontal, conjunto branco
+        image: /images/gallery/colors/3/gallery/1/image.jpeg
 sizes:
   - '01'
   - '02'
@@ -43,8 +45,7 @@ sizes:
   - '14'
 benefits:
   - Tecido térmico macio, leve e respirável
-  - Não embola e não desbota com o uso
-  - Bordado dachshund — assinatura Olic Kids
+  - Estampa dachshund — assinatura Olic Kids
 buyButton: Continuar no WhatsApp
 whatsappMessage: Olá! Tenho interesse no Conjunto Térmico da Olic Kids.
 buyNote: Sem checkout no site — você finaliza o pedido numa conversa com a gente.
