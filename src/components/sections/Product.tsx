@@ -192,12 +192,12 @@ export function Product({ product, whatsappNumber }: ProductProps) {
                 <img
                   src={imgSrc(currentItem!.image)!}
                   alt={currentItem!.label}
-                  style={{ width: '100%', aspectRatio: '4/5', objectFit: 'cover', borderRadius: 'var(--radius)', border: '1px solid var(--line)' }}
+                  style={{ width: '100%', aspectRatio: '9/16', objectFit: 'cover', borderRadius: 'var(--radius)', border: '1px solid var(--line)' }}
                 />
               ) : (
                 <Placeholder
                   label={color ? `${currentItem?.label ?? ''} — ${color.name}` : (currentItem?.label ?? 'Sem cor definida')}
-                  ratio="4 / 5"
+                  ratio="9 / 16"
                 />
               )}
               {color && (

@@ -148,7 +148,7 @@ export default config({
             }),
             image: fields.image({
               label: 'Foto',
-              description: 'Imagem do produto sem cor definida (proporção sugerida: 4:5).',
+              description: 'Imagem do produto sem cor definida (proporção sugerida: 9:16).',
               directory: 'public/images/gallery',
               publicPath: '/images/gallery/',
             }),
@@ -182,7 +182,7 @@ export default config({
                 }),
                 image: fields.image({
                   label: 'Foto',
-                  description: 'Imagem do produto nesta cor (proporção sugerida: 4:5).',
+                  description: 'Imagem do produto nesta cor (proporção sugerida: 9:16).',
                   directory: 'public/images/gallery',
                   publicPath: '/images/gallery/',
                 }),

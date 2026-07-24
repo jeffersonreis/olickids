@@ -6,8 +6,6 @@ tag: Lançamento
 defaultGallery:
   - label: Meninos com conjunto térmico
     image: /images/gallery/defaultGallery/0/image.jpeg
-  - label: Imagem 2
-    image: /images/gallery/defaultGallery/1/image.webp
 colors:
   - name: Azul Marinho
     hex: '#1F2A4D'
